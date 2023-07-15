@@ -1,0 +1,18 @@
+/*
+ * File: Books.css
+ * Project: <<Book Corner>>
+ * File Created: Saturday, 15th July 2023 5:32:32 pm
+ * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Last Modified: Saturday, 15th July 2023 5:42:12 pm
+ * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Copyright 2023 - 2023 Your Company, Your Company
+ */
+.cardContent{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
