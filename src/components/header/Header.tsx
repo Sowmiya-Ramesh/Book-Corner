@@ -4,7 +4,7 @@
  * File Created: Saturday, 15th July 2023 11:05:08 am
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Saturday, 15th July 2023 12:12:09 pm
+ * Last Modified: Saturday, 15th July 2023 2:24:24 pm
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
@@ -15,17 +15,17 @@ import React from 'react';
 import Widgets from '@mui/icons-material/Widgets';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { makeStyles } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     appBar: {
         backgroundColor: '#776d5a',
     },
 }));
-
+const pages = [{ label: 'Books', path: '/books' }, { label: 'Add Book', path: '/add-book' }, { label: 'Edit /Delete', path: '/update-book' }];
 const Header = () => {
 
     const classes = useStyles();
-    const pages = ['Books', 'Add Book', 'Edit / Delete'];
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -35,7 +35,6 @@ const Header = () => {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-
 
     return (
         <AppBar position='static'>
@@ -88,9 +87,11 @@ const Header = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign='center'>{page}</Typography>
+                            {pages?.map((page: { label: string; path: string }, index: number) => (
+                                <MenuItem key={index}>
+                                    <Link to={page.path} style={{ color: 'black', textDecoration: 'none' }}>
+                                        <Typography textAlign='center'>{page?.label}</Typography>
+                                    </Link>                           
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -115,15 +116,17 @@ const Header = () => {
                         Book Corner
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
+                        {pages?.map((page, index) => {
+                            return (<Button
+                                key={index}
+                                // onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
-                            </Button>
-                        ))}
+                                <Link to={page.path} style={{ color: 'white', textDecoration: 'none' }}>
+                                    <Typography textAlign='center'>{page?.label}</Typography>
+                                </Link>
+                            </Button>)
+                        })}
                     </Box>
                 </Toolbar>
             </Container>
