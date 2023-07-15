@@ -1,0 +1,31 @@
+/*
+ * File: HomePage.css
+ * Project: <<Book Corner>>
+ * File Created: Saturday, 15th July 2023 6:42:14 pm
+ * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Last Modified: Saturday, 15th July 2023 7:58:03 pm
+ * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Copyright 2023 - 2023 Your Company, Your Company
+ */
+.homePage {
+    margin: 0;
+    padding: 0;
+    background-image: url('../../assets/homePageImage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* opacity: 0.8; */
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.title{
+    color: white;
+    background-color: #776d5a;
+    border-radius: 2px;
+    padding:5px
+}
