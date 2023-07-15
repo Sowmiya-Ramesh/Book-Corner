@@ -4,7 +4,7 @@
  * File Created: Saturday, 15th July 2023 11:05:08 am
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Saturday, 15th July 2023 5:37:06 pm
+ * Last Modified: Saturday, 15th July 2023 9:03:47 pm
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
@@ -91,7 +91,7 @@ const Header = () => {
                                 <MenuItem key={index}>
                                     <Link to={page.path} style={{ color: 'black', textDecoration: 'none' }}>
                                         <Typography textAlign='center'>{page?.label}</Typography>
-                                    </Link>                           
+                                    </Link>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -101,7 +101,7 @@ const Header = () => {
                         variant='h5'
                         noWrap
                         component='a'
-                        href=''
+                        href='/'
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },

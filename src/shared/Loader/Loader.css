@@ -1,0 +1,18 @@
+/*
+ * File: Loader.css
+ * Project: <<Book Corner>>
+ * File Created: Saturday, 15th July 2023 9:05:26 pm
+ * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Last Modified: Saturday, 15th July 2023 9:07:05 pm
+ * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Copyright 2023 - 2023 Your Company, Your Company
+ */
+.loaderBox {
+    height: 100vh;
+}
+
+.loader {
+    top: 50%;
+}

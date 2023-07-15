@@ -4,7 +4,7 @@
  * File Created: Saturday, 15th July 2023 12:26:38 pm
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Saturday, 15th July 2023 8:07:20 pm
+ * Last Modified: Saturday, 15th July 2023 9:09:48 pm
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
@@ -17,8 +17,11 @@ import { Card, CardActions, CardContent, CardHeader, CardMedia, Grid, IconButton
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import './Books.css';
+import Loader from '../../shared/Loader/Loader';
 
 // TODO: Tool tip
+//TODO: type
+//snackbar
 const useStyles = makeStyles(() => ({
   toolTip: {
     color: '#776d5a',
@@ -27,8 +30,10 @@ const useStyles = makeStyles(() => ({
 
 const Books = () => {
   const classes = useStyles();
-  const [booksList, setBooksList] = useState<any>()
+  const [booksList, setBooksList] = useState<any>();
+  const [loader, setLoader] = useState<boolean>(false);
   const listBooks = async () => {
+    setLoader(true);
     try {
       const response = await BookService.getBookList();
       console.log(response.data.map((e) => e.bookName))
@@ -36,6 +41,9 @@ const Books = () => {
     }
     catch (err) {
       console.log(err)
+    }
+    finally {
+      setLoader(false);
     }
   }
 
@@ -47,7 +55,8 @@ const Books = () => {
   console.log(booksList)
   return (
     <>
-      <Grid container spacing={2} style={{ marginTop: '20px' }}>
+      {loader && <Loader />}
+      {!loader && <Grid container spacing={2} style={{ marginTop: '20px' }}>
         {booksList?.map((e) => {
           return (
             <Grid item key={e.id} xs={12} sm={6} md={4} lg={3}>
@@ -77,7 +86,7 @@ const Books = () => {
               </Card>
             </Grid>)
         })}
-      </Grid>
+      </Grid>}
     </>
   )
 }
