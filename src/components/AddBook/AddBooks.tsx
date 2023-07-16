@@ -4,15 +4,18 @@
  * File Created: Saturday, 15th July 2023 2:16:53 pm
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Saturday, 15th July 2023 5:37:07 pm
+ * Last Modified: Sunday, 16th July 2023 11:22:30 am
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
  */
-const AddBooks = () =>{
+import HookForm from '../../shared/HookForm/HookForm';
+import './AddBooks.css';
+
+const AddBooks = () => {
     return (
-        <div>Add Books</div>
-    )
+        <HookForm />
+    );
 }
 
 export default AddBooks;

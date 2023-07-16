@@ -1,0 +1,55 @@
+/*
+ * File: HookForm.css
+ * Project: <<Book Corner>>
+ * File Created: Sunday, 16th July 2023 11:15:42 am
+ * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Last Modified: Sunday, 16th July 2023 11:16:41 am
+ * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Copyright 2023 - 2023 Your Company, Your Company
+ */
+.form {
+    /* background-color: red; */
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-box {
+    border: 1px solid #776d5a;
+    border-radius: 20px;
+    -webkit-box-shadow: -8px -4px 18px -9px #776d5a;
+    -moz-box-shadow: -8px -4px 18px -9px #776d5a;
+    box-shadow: -8px -4px 18px -9px #776d5a;
+}
+
+.form-group {
+    display: flex;
+    /* border: 1px solid blue; */
+    gap: 20px;
+    padding: 20px;
+    width: 450px;
+}
+
+.form-title {
+    width: 120px;
+    /* padding: 20px; */
+    /* border: 1px solid red; */
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    display: flex;
+}
+
+.inline-error-msg {
+    color: red;
+}

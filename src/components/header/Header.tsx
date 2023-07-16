@@ -4,7 +4,7 @@
  * File Created: Saturday, 15th July 2023 11:05:08 am
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Saturday, 15th July 2023 9:03:47 pm
+ * Last Modified: Sunday, 16th July 2023 11:19:59 am
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
         backgroundColor: '#776d5a',
     },
 }));
-const pages = [{ label: 'Books', path: '/books' }, { label: 'Add Book', path: '/add-book' }, { label: 'Edit /Delete', path: '/update-book' }];
+const pages = [{ label: 'Books', path: '/books' }, { label: 'List Books', path: '/list-books' }, { label: 'Add Book', path: '/add-book' }];
 const Header = () => {
 
     const classes = useStyles();
