@@ -4,7 +4,7 @@
  * File Created: Sunday, 16th July 2023 11:53:51 am
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Sunday, 16th July 2023 12:17:43 pm
+ * Last Modified: Tuesday, 18th July 2023 1:02:01 pm
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
@@ -23,6 +23,7 @@ import Button from '@mui/material/Button';
 import './ListBooks.css'
 import { useEffect, useState } from 'react';
 import { BookService } from '../../service/book.service';
+import Loader from '../../shared/Loader/Loader';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -59,9 +60,9 @@ const tableHeading = [{ id: '1', label: 'Image' }, { id: '2', label: 'Book Name'
 const ListBooks = () => {
 
     const [booksList, setBooksList] = useState<any>();
-    // const [loader, setLoader] = useState<boolean>(false);
+    const [loader, setLoader] = useState<boolean>(false);
     const listBooks = async () => {
-        //   setLoader(true);
+        setLoader(true);
         try {
             const response = await BookService.getBookList();
             console.log(response.data.map((e) => e.bookName))
@@ -71,7 +72,7 @@ const ListBooks = () => {
             console.log(err)
         }
         finally {
-            // setLoader(false);
+            setLoader(false);
         }
     }
 
@@ -79,38 +80,43 @@ const ListBooks = () => {
         listBooks()
     }, [])
     return (
-        <TableContainer component={Paper} sx={{ margin: '24px', width: '75%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Table aria-label='customized table' className='tableContainer'>
-                <TableHead>
-                    <TableRow>
-                        {tableHeading.map((e) => {
-                            return (
-                                <StyledTableCell >{e.label}</StyledTableCell>)
-                        })}
+        <>
+            {loader && <Loader />}
+            {
+                !loader &&
+                <TableContainer component={Paper} sx={{ margin: '24px', width: '75%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <Table aria-label='customized table' className='tableContainer'>
+                        <TableHead>
+                            <TableRow>
+                                {tableHeading.map((e) => {
+                                    return (
+                                        <StyledTableCell >{e.label}</StyledTableCell>)
+                                })}
 
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {booksList?.map((row) => {
-                        return (
-                            <StyledTableRow key={row.id}>
-                                <StyledTableCell scope='row'>
-                                    <CardMedia
-                                        component='img'
-                                        height='35'
-                                        style={{ borderRadius: '50%', width: '35px' }}
-                                        image={row.image}
-                                    />
-                                </StyledTableCell>
-                                <StyledTableCell>{row.bookName}</StyledTableCell>
-                                <StyledTableCell>{row.author}</StyledTableCell>
-                                <StyledTableCell>{row.availability ? 'Yes' : 'No'}</StyledTableCell>
-                                <StyledTableCell> <Button variant='text'>Delete</Button></StyledTableCell>
-                            </StyledTableRow>)
-                    })}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {booksList?.map((row) => {
+                                return (
+                                    <StyledTableRow key={row.id}>
+                                        <StyledTableCell scope='row'>
+                                            <CardMedia
+                                                component='img'
+                                                height='35'
+                                                style={{ borderRadius: '50%', width: '35px' }}
+                                                image={row.image}
+                                            />
+                                        </StyledTableCell>
+                                        <StyledTableCell>{row.bookName}</StyledTableCell>
+                                        <StyledTableCell>{row.author}</StyledTableCell>
+                                        <StyledTableCell>{row.availability ? 'Yes' : 'No'}</StyledTableCell>
+                                        <StyledTableCell> <Button variant='text'>Delete</Button></StyledTableCell>
+                                    </StyledTableRow>)
+                            })}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            }</>
     );
 }
 export default ListBooks;
