@@ -1,0 +1,16 @@
+/*
+ * File: ListBooks.css
+ * Project: <<Book Corner>>
+ * File Created: Sunday, 16th July 2023 12:15:15 pm
+ * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Last Modified: Sunday, 16th July 2023 12:15:25 pm
+ * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
+ * -----
+ * Copyright 2023 - 2023 Your Company, Your Company
+ */
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

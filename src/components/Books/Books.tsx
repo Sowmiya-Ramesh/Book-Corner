@@ -4,7 +4,7 @@
  * File Created: Saturday, 15th July 2023 12:26:38 pm
  * Author: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
- * Last Modified: Sunday, 16th July 2023 11:23:25 am
+ * Last Modified: Sunday, 16th July 2023 12:07:58 pm
  * Modified By: Sowmiya-Ramesh (miyaramesh9944@gmail.com)
  * -----
  * Copyright 2023 - 2023 Your Company, Your Company
@@ -21,7 +21,7 @@ import Loader from '../../shared/Loader/Loader';
 
 // TODO: Tool tip
 //TODO: type
-//snackbar, sorting, import name sorting
+//snackbar, sorting, import name sorting,pagination
 const useStyles = makeStyles(() => ({
   toolTip: {
     color: '#776d5a',
